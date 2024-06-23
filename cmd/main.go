@@ -31,8 +31,14 @@ func main() {
 		}
 	}
 
-	if !db.HasTable(&Model.TodoItem{}) {
-		if err := db.AutoMigrate(&Model.TodoItem{}).Error; err != nil {
+	if !db.HasTable(&Model.TodoList{}) {
+		if err := db.AutoMigrate(&Model.TodoList{}).Error; err != nil {
+			log.Fatalf("failed to create table: %v", err)
+		}
+	}
+
+	if !db.HasTable(&Model.UsersLists{}) {
+		if err := db.AutoMigrate(&Model.UsersLists{}).Error; err != nil {
 			log.Fatalf("failed to create table: %v", err)
 		}
 	}
