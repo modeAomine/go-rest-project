@@ -1,0 +1,3 @@
+port: "6060"
+database:
+  url: "host=localhost user=postgres dbname=godb password=123 sslmode=disable"
